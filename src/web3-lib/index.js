@@ -1,4 +1,9 @@
 import ApiErrors from './api-errors.js'
+import Infura from './infura'
+import networks from './networks'
+import abimanager from './abi-manager'
+import utils from './utils'
+import BasWebAPI from './apis'
 
 /**
  * call this need after thereum.enable().
@@ -61,4 +66,9 @@ export async function globalWebState(){
 
 export default {
   winWeb3,
+  Infura,
+  networks,
+  abimanager,
+  utils,
+  BasWebAPI
 };
