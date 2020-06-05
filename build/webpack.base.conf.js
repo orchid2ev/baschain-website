@@ -11,7 +11,6 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    web3lib:['./src/web3-lib/index.js'],
     app: './src/main.js'
   },
   output: {
@@ -24,7 +23,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      // 'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
     }
   },
