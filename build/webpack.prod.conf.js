@@ -29,7 +29,19 @@ const webpackConfig = merge(baseWebpackConfig, {
   },
   externals:{
     'vue': 'Vue',
-    'vue-router': 'VueRouter'
+    'vue-router': 'VueRouter',
+    'vue-i18n': "VueI18n",
+    'vuex': 'Vuex',
+    'lodash': 'lodash',
+    "axios": "axios",
+    'web3': 'Web3',
+    'element-ui': 'ELEMENT',
+    'jquery': 'Jquery',
+    "bootstrap-vue": "BootstrapVue",
+    "punycode": "punycode",
+    "numeral": "numeral",
+    // "qrcode": "QRCode",
+    "idb": "idb"
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
