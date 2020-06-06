@@ -11,6 +11,7 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
+    vendor: ['core-js'],
     app: './src/main.js'
   },
   output: {
@@ -21,9 +22,9 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue','.json'],//'.json'
     alias: {
-      // 'vue$': 'vue/dist/vue.esm.js',
+      'vue$': process.env.NODE_ENV === 'production' ? 'vue/dist/vue.min.js':'vue/dist/vue.esm.js',
       '@': resolve('src'),
     }
   },
@@ -37,13 +38,13 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 2048,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },

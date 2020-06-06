@@ -49,13 +49,19 @@ const webpackConfig = merge(baseWebpackConfig, {
       'process.env': env
     }),
     new UglifyJsPlugin({
+      // beautify: {
+      //   cache: true,
+      //   workers: os.cpus().length
+      // },
       uglifyOptions: {
         compress: {
-          warnings: false
-        }
+          warnings: false,
+          drop_console: true,
+        },
+        comments: false,
       },
       sourceMap: config.build.productionSourceMap,
-      parallel: true
+      parallel: true,
     }),
     // extract css into its own file
     new ExtractTextPlugin({
@@ -71,7 +77,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new OptimizeCSSPlugin({
       cssProcessorOptions: config.build.productionSourceMap
         ? { safe: true, map: { inline: false } }
-        : { safe: true }
+        : { safe: true, discardComments: { removeAll: true } }
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -121,9 +127,16 @@ const webpackConfig = merge(baseWebpackConfig, {
       name: 'app',
       async: 'vendor-async',
       children: true,
-      minChunks: 3
+      minChunks: 2
     }),
-
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'web3-lib',
+      filename:'web3-lib.js',
+      async: false,
+      children: true,
+      deepChildren:true,
+      minChunks: 2
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {

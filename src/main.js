@@ -50,34 +50,6 @@ store.dispatch('dapp/autoLoginMetaMask');
 store.dispatch('dapp/loadDAppConfiguration');
 
 
-//init TEST ,production will remove
-// import './plugins/register-service-worker'
-// import * as Utils from './utils'
-// import Validator from './utils/Validator.js'
-// // import $ from 'jquery';
-// // global.$ = $;
-// global.Utils = Utils
-// global.Validator = Validator
-
-// import ContractHelper from '@/web3-lib/abi-manager'
-// global.ContractHelper = ContractHelper
-
-// import ABITestHelper from './web3-lib/apis/market-api'
-// global.ABITestHelper = ABITestHelper;
-
-// import AssetsApi from './web3-lib/apis/indexeddb-assets'
-// global.AssetsApi = AssetsApi
-
-
-// import AllInsts from './web3-lib/apis'
-// global.AllInsts = AllInsts;
-
-// import ApiUtils from './utils/refdata-utils'
-// global.ApiUtils = ApiUtils;
-
-// import idbUtils from './bascore/indexDBService.js'
-// global.idbUtils = idbUtils
-
 /**
  * all at last
  */
