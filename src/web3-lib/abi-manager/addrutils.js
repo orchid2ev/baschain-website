@@ -3,7 +3,6 @@
  * @param {*} contractName
  * @param {*} networks
  */
-import AddressHolder from './address-holder.js'
 import { ContractAddresses } from './contracts/addresses'
 
 export function assembleAddresses(contractName, networks) {

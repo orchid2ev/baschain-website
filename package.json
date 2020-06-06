@@ -1,7 +1,7 @@
 {
   "name": "baschain-web",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Bas Chain",
   "author": "",
   "private": true,
   "scripts": {
@@ -9,8 +9,10 @@
     "start": "npm run dev",
     "build": "node build/build.js"
   },
-  "sideEffects":false,
+  "sideEffects": false,
   "dependencies": {
+    "element-ui": "^2.13.2",
+    "punycode": "^2.1.1",
     "qrcode": "^1.4.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

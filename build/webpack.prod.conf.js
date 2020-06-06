@@ -38,7 +38,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     'element-ui': 'ELEMENT',
     'jquery': 'Jquery',
     "bootstrap-vue": "BootstrapVue",
-    "punycode": "punycode",
+    // "punycode": "punycode",
     "numeral": "numeral",
     // "qrcode": "QRCode",
     "idb": "idb"
