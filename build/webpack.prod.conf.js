@@ -13,6 +13,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const env = require('../config/prod.env')
 
+const PrerenderSPAPlugin = require("prerender-spa-plugin");
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
+
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -142,11 +145,18 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: [".*"]
       },
-      {
-        from: path.resolve(__dirname, "../src/home.html"),
-        to: path.resolve(__dirname, "../dist")
-      }
-    ])
+      // {
+      //   from: path.resolve(__dirname, "../src/home.html"),
+      //   to: path.resolve(__dirname, "../dist")
+      // }
+    ]),
+    //https://github.com/chrisvfritz/prerender-spa-plugin
+    new PrerenderSPAPlugin({
+      // Required - The path to the webpack-outputted app to prerender.
+      staticDir: path.join(__dirname, "../dist"),
+      // Required - Routes to render.
+      routes: ["/", "/home", "/apply", "/help"]
+    })
   ]
 });
 

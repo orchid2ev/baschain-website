@@ -59,7 +59,8 @@ export default {
 
     },
     initClipBorad(){
-      const clipboard = new Clipboard(this.$refs.copyWalletAddress)
+      const clipboard = new ClipboardJS(this.$refs.copyWalletAddress)
+      //const clipboard = new Clipboard(this.$refs.copyWalletAddress)
 
       clipboard.on('success',(e)=>{
         console.log(`Copied Wallet Address ${this.content} to clipborad.`)
