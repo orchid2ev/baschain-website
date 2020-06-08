@@ -1,5 +1,5 @@
 
-//import punycode from "punycode";
+import punycode from "punycode";
 
 import * as ApiErrors from '../api-errors.js'
 

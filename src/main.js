@@ -9,6 +9,7 @@ Vue.config.productionTip = true
  * =====================
  *
  **/
+import './plugins/font-awesome'
 //import './plugins/vuex'
 //import './plugins/axios'
 
@@ -17,7 +18,7 @@ import { i18n } from './plugins/vue-i18n';
 
 import './plugins/bootstrap'
 import './plugins/elementui'
-//import './plugins/font-awesome'
+
 
 
 //bizjs
